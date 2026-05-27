@@ -16,8 +16,20 @@ class Logic(QMainWindow, Ui_TodoList):
 
 
     def add(self):
-        pass
+        # get input from input box
+        user_input = self.txtBox.text()
+
+        # add to the list widget
+        self.list.addItem(user_input)
+
+        # clear
+        self.txtBox.setText("")
 
 
     def delete(self):
-        pass
+        # get row of the task
+        row = self.list.currentRow()
+
+        # obtain selected task from list widget and delete
+        task = self.list.takeItem(row)
+        del task
